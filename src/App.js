@@ -1,11 +1,17 @@
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import React from 'react';
-import './App.css';
 
 function App() {
+  const config = {
+    useSystemColorMode: false,
+    initialColorMode: 'dark',
+  };
+
+  const customTheme = extendTheme({ config });
   return (
-    <div>
-      <h1>Template with Snowpack, ESLint, Prettier</h1>
-    </div>
+    <ChakraProvider resetCSS theme={customTheme}>
+      <h1>Template with Snowpack, ESLint, Prettier, Chakra-UI</h1>
+    </ChakraProvider>
   );
 }
 
